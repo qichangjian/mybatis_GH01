@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 环境 -->
+    <environments default="development">
+        <!-- 具体环境： id:当前环境的唯一标示 可以配置多个数据库-->
+        <environment id="development">
+            <!-- 事务管理器 type:类型 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源： type:POOLED -->
+            <dataSource type="POOLED">
+                <!-- 获取连接的四个参数 -->
+                <!--<property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///bd1807?useSSL=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="274039"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 映射器 -->
+    <mappers>
+        <!--映射文件的位置-->
+        <mapper resource="com/qcj/config/UserInfosMapper.xml"/>
+    </mappers>
+</configuration>
